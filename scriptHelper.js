@@ -190,7 +190,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
     if (fuelLevel < 10000) {
         // h2 id="launchStatus"
-        launchStatus.innerHTML = "Shuttle not ready for launch";
+        launchStatus.innerHTML = "Shuttle Not ready for launch";
         launchStatus.style.color = "red";
         // li id="fuelStatus"
         fuelStatus.innerHTML = "Fuel level too low for launch";
