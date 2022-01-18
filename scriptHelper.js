@@ -83,8 +83,8 @@ function validateInput(testInput) {
  * 
  *      validateInput(pilot)        !== "Not a Number"
  *      validateInput(copilot)      !== "Not a Number"
- *      validateInput(fuelLevel)    === "Is a Number"
- *      validateInput(cargoLevel)   === "Is a Number"
+ *      validateInput(fuelLevel)    === "Not a Number"
+ *      validateInput(cargoLevel)   === "Not a Number"
  * 
  * IF THE RETURNED VALUE OF validateInput(testInput) MATCHES TO THE CORRESPONDING
  * STRING VALUE, PROMPT THE USER AN ALERT STATEMENT AND STOP THE FUNCTION WITH 
@@ -123,7 +123,7 @@ function validateInput(testInput) {
  *                  launchStatus.innerHTML = "Shuttle not ready for launch";
  *              
  *              => h2 Text Color: Red
- *                  launchStatus.style.color = "red";
+ *                  launchStatus.style.color = "rgb(199, 37, 78)";
  * 
  *              => Change text of <li id="fuelStatus"...> ... </li>
  *                  fuelStatus.innerHTML = "Fuel level too low for launch";
@@ -133,7 +133,7 @@ function validateInput(testInput) {
  *                  launchStatus.innerHTML = "Shuttle not ready for launch";
  * 
  *              => h2 Text Color: Red
- *                  launchStatus.style.color ="red";
+ *                  launchStatus.style.color ="rgb(199, 37, 78)";
  *              
  *              => Change text of <li id="cargoStatus"...> ... </li>    
  *                  cargoStatus.innerHTML = "Cargo mass too heavy for launch";
@@ -151,27 +151,19 @@ function validateInput(testInput) {
  *                  launchStatus.innerHTML = "Shuttle is Ready for Launch";
  * 
  *              => h2 Text Color: Green
- *                  launchStatus.style.color = "green";
+ *                  launchStatus.style.color = "rgb(65, 159, 106)";
  */
 
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
    
     // INSERT VALIDATION FUNCTION
-    // if(pilot === "" || copilot === "" || fuelLevel === "" || cargoLevel === "") {
-    //     alert("All input fields must be filled");
-    //     return;
-    // } 
-    
-    // if (validateInput(pilot) !== "Not a Number" || validateInput(copilot) !== "Not a Number" || validateInput(Number(fuelLevel)) === "Is a Number" || validateInput(Number(cargoLevel)) === "Is a Number") {
-    //     alert("Each field must have a valid input.");
-    //     return;
-    // }
-
     if (pilot === "" || copilot === "" || fuelLevel === "" || cargoLevel === "") {
         alert("All fields are required!");
         return;
-    }  else if (validateInput(pilot) !== 'Not a Number' || validateInput(copilot) !== 'Not a Number' || validateInput(fuelLevel) === 'Not a Number' || validateInput(cargoLevel) === 'Not a Number') {
+    }  
+    
+    if (validateInput(pilot) !== 'Not a Number' || validateInput(copilot) !== 'Not a Number' || validateInput(fuelLevel) === "Not a Number" || validateInput(cargoLevel) === "Not a Number") {
         alert("Make sure to enter valid information for each field!");
         return;
     }  
@@ -191,7 +183,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     if (fuelLevel < 10000) {
         // h2 id="launchStatus"
         launchStatus.innerHTML = "Shuttle Not ready for launch";
-        launchStatus.style.color = "red";
+        launchStatus.style.color = "rgb(199, 37, 78)";
         // li id="fuelStatus"
         fuelStatus.innerHTML = "Fuel level too low for launch";
     }
@@ -199,7 +191,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     if (cargoLevel > 10000) {
         // h2 id="launchStatus"
         launchStatus.innerHTML = "Shuttle Not Ready for Launch";
-        launchStatus.style.color = "red";
+        launchStatus.style.color = "rgb(199, 37, 78)";
         // li id="cargoStatus"
         cargoStatus.innerHTML = "Cargo mass too heavy for launch";
     }
@@ -217,7 +209,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     if (fuelLevel >= 10000 && cargoLevel <= 10000) {
         // h2 id="launchStatus"
         launchStatus.innerHTML = "Shuttle is Ready for Launch";
-        launchStatus.style.color = "green";
+        launchStatus.style.color = "rgb(65, 159, 106)";
     }
 
     list.style.visibility = "visible";
