@@ -159,12 +159,12 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
    
     // INSERT VALIDATION FUNCTION
     if(pilot === "" || copilot === "" || fuelLevel === "" || cargoLevel === "") {
-        alert("All input fields must be filled");
+        window.alert("All input fields must be filled");
         return;
     } 
     
     if (validateInput(pilot) !== "Not a Number" || validateInput(copilot) !== "Not a Number" || validateInput(Number(fuelLevel)) === "Is a Number" || validateInput(Number(cargoLevel)) === "Is a Number") {
-        alert("Each field must have a valid input.");
+        window.alert("Each field must have a valid input.");
         return;
     }
 
