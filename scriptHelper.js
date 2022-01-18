@@ -158,23 +158,23 @@ function validateInput(testInput) {
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
    
     // INSERT VALIDATION FUNCTION
-    if(pilot === "" || copilot === "" || fuelLevel === "" || cargoLevel === "") {
-        alert("All input fields must be filled");
-        return;
-    } 
+    // if(pilot === "" || copilot === "" || fuelLevel === "" || cargoLevel === "") {
+    //     alert("All input fields must be filled");
+    //     return;
+    // } 
     
-    if (validateInput(pilot) !== "Not a Number" || validateInput(copilot) !== "Not a Number" || validateInput(Number(fuelLevel)) === "Is a Number" || validateInput(Number(cargoLevel)) === "Is a Number") {
-        alert("Each field must have a valid input.");
-        return;
-    }
+    // if (validateInput(pilot) !== "Not a Number" || validateInput(copilot) !== "Not a Number" || validateInput(Number(fuelLevel)) === "Is a Number" || validateInput(Number(cargoLevel)) === "Is a Number") {
+    //     alert("Each field must have a valid input.");
+    //     return;
+    // }
 
-    // if (pilot === "" || copilot === "" || fuelLevel === "" || cargoLevel === "") {
-    //     alert("All fields are required!");
-    //     return;
-    // }  else if (validateInput(pilot) !== 'Not a Number' || validateInput(copilot) !== 'Not a Number' || validateInput(fuelLevel) === 'Not a Number' || validateInput(cargoLevel) === 'Not a Number') {
-    //     alert("Make sure to enter valid information for each field!");
-    //     return;
-    // }  
+    if (pilot === "" || copilot === "" || fuelLevel === "" || cargoLevel === "") {
+        alert("All fields are required!");
+        return;
+    }  else if (validateInput(pilot) !== 'Not a Number' || validateInput(copilot) !== 'Not a Number' || validateInput(fuelLevel) === 'Not a Number' || validateInput(cargoLevel) === 'Not a Number') {
+        alert("Make sure to enter valid information for each field!");
+        return;
+    }  
 
     let launchStatus = document.getElementById("launchStatus");
     let pilotStatus = document.getElementById("pilotStatus");

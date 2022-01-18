@@ -99,7 +99,7 @@ window.addEventListener("load", function() {
 	});
 
 
-	
+
 	let list = document.getElementById("faultyItems");
 	let form = document.querySelector("form");
 	list.style.visibility = "hidden"; 
